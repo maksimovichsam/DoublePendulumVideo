@@ -375,7 +375,7 @@ class FractalPlot(Scene):
         def step(fractal, dt):
             p.step(dt)
             fractal.pixel_array = np.array(get_fractal())
-            fractal.change_to_rgba_array()
+            fractal.pixel_array = utils.images.change_to_rgba_array(fractal.pixel_array)
 
         text1 = Tex("Now, lets see how every possible pendulum evolves together.").move_to([0, -3.5, 0])
         text2 = Tex("Every pixel represents the state of a unique pendulum").move_to([0, -3.5, 0])
